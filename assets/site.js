@@ -12,6 +12,8 @@ $("heroLab").textContent = platform.lab;
 $("heroFull").textContent = platform.full_name;
 $("heroTag").textContent = platform.tagline;
 $("footLab").textContent = `${platform.name} · ${platform.lab}`;
+// lab website (platform.json "lab_url"): the ICS Lab mark in the nav bar and the footer link
+if (platform.lab_url) document.querySelectorAll(".lab-link").forEach((a) => { a.href = platform.lab_url; });
 $("heroStats").innerHTML = [
   [projects.length, "projects"],
   [platform.platforms.map((p) => p.id).join(" / "), "platforms"],

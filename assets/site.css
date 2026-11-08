@@ -9,6 +9,8 @@
 .badge { width: 54px; height: 44px; flex: none; display: grid; place-items: center; border-radius: var(--cx-radius-m);
   background: var(--cx-primary); color: var(--cx-on-primary); font-weight: 800; font-size: 18px; letter-spacing: 0.06em; }
 .nav-ics .full { font-size: var(--cx-fs-xl); font-weight: 600; color: var(--cx-text-1); white-space: nowrap; }
+a.nav-ics { text-decoration: none; }
+a.nav-ics:hover .full { color: var(--cx-brand); }
 .nav-brand { display: flex; align-items: center; gap: 14px; padding: 0 var(--cx-sp-6); color: var(--cx-brand) !important; text-decoration: none !important; }
 .nav-mark { width: 44px; height: 44px; display: grid; place-items: center; border-radius: var(--cx-radius-l); background: var(--cx-surface-1); border: 1px solid var(--cx-border); }
 .nav-brand b { font-size: var(--cx-fs-xl); font-weight: 600; letter-spacing: 0.02em; }
