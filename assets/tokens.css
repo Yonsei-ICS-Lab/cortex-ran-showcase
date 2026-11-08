@@ -1,0 +1,279 @@
+/* CORTEX-RAN design tokens — navy, brand blue, gold actions.
+ * Every project page loads this (cortex-ui.js injects it automatically).
+ * Custom properties pierce shadow DOM, so the Web Components read them too.
+ *
+ * Color roles:
+ *   brand   (blue)  logo marks and the CORTEX-RAN wordmark only
+ *   primary (gold)  primary action buttons only
+ *   text            titles, body text and KPI values stay light grey/white
+ *   status          ok / warn / crit — always shipped with a glyph or label
+ * Flat surfaces: no gradients, glows or highlight shadows. */
+:root {
+  color-scheme: dark;
+
+  /* surfaces */
+  --cx-bg: #080F1C;            /* page */
+  --cx-surface-1: #111C2E;     /* panels / cards */
+  --cx-surface-2: #16233A;     /* raised: hover, segmented controls, chips */
+  --cx-surface-3: #1D2C45;     /* tracks, pressed */
+  --cx-input: #0B1423;         /* inputs, log boxes, code */
+  --cx-border: #26364D;
+  --cx-border-strong: #34475F;
+
+  /* roles */
+  --cx-brand: #60A5FA;
+  --cx-brand-soft: rgba(96, 165, 250, 0.12);
+  --cx-primary: #E9B949;
+  --cx-primary-hover: #F3C967;
+  --cx-on-primary: #080F1C;
+  --cx-check: #5B83C4;         /* low-saturation blue for checkboxes */
+
+  /* ink */
+  --cx-text-1: #E6EDF7;
+  --cx-text-2: #94A3B8;
+  --cx-text-3: #64748B;
+
+  /* status — reserved meanings */
+  --cx-ok: #22C55E;
+  --cx-warn: #F59E0B;
+  --cx-crit: #F43F5E;
+  --cx-idle: #64748B;
+  --cx-estop: #F43F5E;
+
+  /* data series (dark-surface categorical slots, fixed order) */
+  --cx-series-1: #3987e5;
+  --cx-series-2: #d95926;
+  --cx-series-3: #199e70;
+  --cx-series-4: #c98500;
+  --cx-series-5: #d55181;
+  --cx-series-6: #008300;
+  --cx-series-7: #9085e9;
+  --cx-series-8: #e66767;
+  --cx-grid: #1E2B40;
+  --cx-axis: #34475F;
+
+  /* type */
+  --cx-font-sans: "Inter", "Noto Sans CJK SC", "Noto Sans SC", "Noto Sans CJK KR", "PingFang SC",
+    "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --cx-font-mono: "JetBrains Mono", "Fira Code", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --cx-fs-xs: 11px;
+  --cx-fs-s: 12px;
+  --cx-fs-m: 14px;
+  --cx-fs-l: 16px;
+  --cx-fs-xl: 21px;
+  --cx-fs-2xl: 28px;
+  --cx-fs-hero: 44px;
+  --cx-tracking-caps: 0.1em;
+
+  /* spacing — 4px scale */
+  --cx-sp-1: 4px;
+  --cx-sp-2: 8px;
+  --cx-sp-3: 12px;
+  --cx-sp-4: 16px;
+  --cx-sp-5: 20px;
+  --cx-sp-6: 24px;
+  --cx-sp-7: 28px;
+  --cx-sp-8: 32px;
+  --cx-sp-10: 40px;
+  --cx-sp-12: 48px;
+
+  /* shape */
+  --cx-radius-s: 4px;
+  --cx-radius-m: 8px;          /* controls */
+  --cx-radius-l: 12px;         /* cards */
+  --cx-radius-pill: 999px;
+  --cx-shadow-1: none;
+  --cx-shadow-2: 0 12px 32px rgba(0, 0, 0, 0.45);  /* floating layers only (dialogs, tooltips) */
+  --cx-focus: 0 0 0 2px var(--cx-bg), 0 0 0 4px var(--cx-brand);
+
+  /* page frame */
+  --cx-header-h: 80px;
+  --cx-statusbar-h: 60px;
+  --cx-ics-w: 320px;
+  --cx-sidebar-min-w: 420px;
+  --cx-gap: 20px;
+}
+
+/* ---- base elements, opt-in via class so embedding hosts are not restyled ---- */
+.cx-page {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--cx-bg);
+  color: var(--cx-text-1);
+  font-family: var(--cx-font-sans);
+  font-size: var(--cx-fs-m);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.cx-page *, .cx-page *::before, .cx-page *::after { box-sizing: border-box; }
+.cx-page [hidden] { display: none !important; }
+.cx-page a { color: var(--cx-brand); text-decoration: none; }
+.cx-page a:hover { text-decoration: underline; }
+.cx-page :focus-visible { outline: none; box-shadow: var(--cx-focus); border-radius: var(--cx-radius-s); }
+
+.cx-card {
+  background: var(--cx-surface-1);
+  border: 1px solid var(--cx-border);
+  border-radius: var(--cx-radius-l);
+}
+.cx-card-title {
+  margin: 0;
+  font-size: var(--cx-fs-s);
+  font-weight: 600;
+  letter-spacing: var(--cx-tracking-caps);
+  text-transform: uppercase;
+  color: var(--cx-text-2);
+}
+/* control-sidebar card heading ("NEAR-RT Controller") */
+.cx-card-heading { margin: 0; font-size: var(--cx-fs-l); font-weight: 600; color: var(--cx-text-1); }
+.cx-eyebrow {
+  font-size: var(--cx-fs-xs);
+  letter-spacing: var(--cx-tracking-caps);
+  text-transform: uppercase;
+  color: var(--cx-brand);
+}
+.cx-mono { font-family: var(--cx-font-mono); font-variant-numeric: tabular-nums; }
+.cx-muted { color: var(--cx-text-3); }
+
+/* buttons */
+.cx-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--cx-sp-2);
+  min-height: 40px; padding: 0 var(--cx-sp-4);
+  border-radius: var(--cx-radius-m);
+  border: 1px solid var(--cx-border);
+  background: var(--cx-surface-1);
+  color: var(--cx-text-1);
+  font: 500 var(--cx-fs-m) var(--cx-font-sans);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  white-space: nowrap;
+  text-decoration: none !important;
+}
+.cx-btn:hover:not(:disabled) { border-color: var(--cx-border-strong); background: var(--cx-surface-2); }
+.cx-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.cx-btn-primary {
+  min-height: 44px;
+  background: var(--cx-primary);
+  border-color: var(--cx-primary);
+  color: var(--cx-on-primary);
+  font-weight: 600;
+}
+.cx-btn-primary:hover:not(:disabled) { background: var(--cx-primary-hover); border-color: var(--cx-primary-hover); color: var(--cx-on-primary); }
+.cx-btn-danger { background: transparent; border-color: var(--cx-crit); color: var(--cx-crit); }
+.cx-btn-danger:hover:not(:disabled) { background: rgba(244, 63, 94, 0.1); border-color: var(--cx-crit); }
+.cx-btn-sm { min-height: 30px; padding: 0 var(--cx-sp-3); font-size: var(--cx-fs-s); }
+
+/* form controls */
+.cx-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.cx-field > span { font-size: var(--cx-fs-s); color: var(--cx-text-2); }
+.cx-input, .cx-select, .cx-textarea {
+  width: 100%;
+  min-height: 40px;
+  background: var(--cx-input);
+  border: 1px solid var(--cx-border);
+  border-radius: var(--cx-radius-m);
+  color: var(--cx-text-1);
+  font: var(--cx-fs-m) var(--cx-font-sans);
+  padding: 8px 12px;
+}
+.cx-textarea { resize: vertical; min-height: 76px; line-height: 1.45; }
+.cx-input:focus, .cx-select:focus, .cx-textarea:focus { outline: none; border-color: var(--cx-brand); box-shadow: 0 0 0 3px var(--cx-brand-soft); }
+.cx-check { display: inline-flex; align-items: center; gap: var(--cx-sp-2); font-size: var(--cx-fs-s); color: var(--cx-text-2); cursor: pointer; }
+.cx-check input { accent-color: var(--cx-check); width: 16px; height: 16px; }
+
+/* status pills — color + glyph + label, never color alone */
+.cx-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 24px; padding: 0 10px;
+  border-radius: var(--cx-radius-pill);
+  font-size: var(--cx-fs-xs); font-weight: 600; letter-spacing: 0.04em;
+  border: 1px solid currentColor;
+  background: color-mix(in srgb, currentColor 10%, transparent);
+  white-space: nowrap;
+}
+.cx-pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.cx-pill.ok { color: var(--cx-ok); }
+.cx-pill.warn { color: var(--cx-warn); }
+.cx-pill.warn::before { border-radius: 1px; transform: rotate(45deg); }
+.cx-pill.crit { color: var(--cx-crit); }
+.cx-pill.crit::before { border-radius: 1px; }
+.cx-pill.idle { color: var(--cx-idle); }
+.cx-pill.idle::before { background: transparent; border: 1.5px solid currentColor; width: 5px; height: 5px; }
+
+/* tables */
+.cx-table-wrap { overflow: auto; max-width: 100%; }
+.cx-table { width: 100%; border-collapse: collapse; font-size: var(--cx-fs-s); }
+.cx-table th {
+  position: sticky; top: 0; z-index: 1;
+  text-align: left; font-weight: 600; color: var(--cx-text-3);
+  font-size: var(--cx-fs-xs); letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 8px 10px; background: var(--cx-surface-1); border-bottom: 1px solid var(--cx-border);
+  white-space: nowrap;
+}
+.cx-table td { padding: 7px 10px; border-bottom: 1px solid var(--cx-grid); color: var(--cx-text-1); vertical-align: top; }
+.cx-table td.num { font-family: var(--cx-font-mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.cx-table td.mono { font-family: var(--cx-font-mono); font-size: var(--cx-fs-xs); white-space: nowrap; }
+.cx-table tr:hover td { background: rgba(255, 255, 255, 0.02); }
+.cx-table .cx-empty { color: var(--cx-text-3); text-align: center; padding: var(--cx-sp-6); }
+
+/* scrollbars */
+.cx-page ::-webkit-scrollbar { width: 10px; height: 10px; }
+.cx-page ::-webkit-scrollbar-thumb { background: var(--cx-surface-3); border-radius: 10px; border: 2px solid var(--cx-bg); }
+.cx-page ::-webkit-scrollbar-track { background: transparent; }
+
+/* ---- the fixed project skeleton ----
+ * <body class="cx-page cx-app">
+ *   .cx-shell-top      header (80px) + system status bar (60px)
+ *   .cx-shell-main     .cx-shell-live (monitor + bottom tabs) | <cortex-splitter> | .cx-shell-control
+ * Wide screens: the app fills the window, monitor ~70% / control ~30% (min 420px), and the
+ * two panes scroll independently so the live view stays visible while operating.
+ * View "monitor" hides the control pane. */
+.cx-shell-top { position: sticky; top: 0; z-index: 50; }
+.cx-shell-main {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) 6px var(--cx-control-w, minmax(var(--cx-sidebar-min-w), 3fr));
+}
+/* container: inner grids respond to the pane width (splitter, view), not the viewport */
+.cx-shell-live {
+  display: flex; flex-direction: column; gap: var(--cx-gap); min-width: 0;
+  padding: 18px var(--cx-sp-7) var(--cx-sp-7);
+  container: live / inline-size;
+}
+.cx-shell-control {
+  display: flex; flex-direction: column; gap: var(--cx-gap); min-width: 0;
+  padding: var(--cx-sp-6) var(--cx-sp-5);
+  border-left: 1px solid var(--cx-border);
+}
+.cx-pane-title {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--cx-sp-2);
+  font-size: var(--cx-fs-xs); font-weight: 600; letter-spacing: var(--cx-tracking-caps); text-transform: uppercase;
+  color: var(--cx-text-3);
+}
+.cx-pane-title small { font-weight: 400; letter-spacing: 0.02em; text-transform: none; color: var(--cx-text-3); font-size: var(--cx-fs-xs); }
+.cx-shell-bottom { margin-top: var(--cx-sp-1); }
+cortex-splitter { display: block; cursor: col-resize; background: var(--cx-bg); position: relative; touch-action: none; }
+cortex-splitter::after { content: ""; position: absolute; top: 50%; left: 2px; width: 2px; height: 40px; margin-top: -20px;
+  border-radius: 2px; background: var(--cx-border-strong); transition: background 0.15s, height 0.15s; }
+cortex-splitter:hover::after, cortex-splitter.dragging::after, cortex-splitter:focus-visible::after { background: var(--cx-brand); height: 72px; margin-top: -36px; }
+cortex-splitter:focus-visible { outline: none; box-shadow: none; }
+
+@media (min-width: 1201px) {
+  .cx-app { height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+  .cx-app .cx-shell-top { position: relative; flex: none; }
+  .cx-app .cx-shell-main { flex: 1; min-height: 0; }
+  .cx-app .cx-shell-live, .cx-app .cx-shell-control { overflow-y: auto; min-height: 0; overscroll-behavior: contain; }
+  /* scrolling flex columns: children keep their natural height instead of shrinking to fit */
+  .cx-app .cx-shell-live > *, .cx-app .cx-shell-control > * { flex-shrink: 0; }
+}
+:root[data-cx-view="monitor"] .cx-shell-control,
+:root[data-cx-view="monitor"] cortex-splitter { display: none; }
+:root[data-cx-view="monitor"] .cx-shell-main { grid-template-columns: minmax(0, 1fr); }
+
+@media (max-width: 1200px) {
+  .cx-shell-main { grid-template-columns: minmax(0, 1fr); }
+  cortex-splitter { display: none; }
+  .cx-shell-control { border-left: none; border-top: 1px solid var(--cx-border); }
+}
+@media (max-width: 700px) {
+  .cx-shell-live, .cx-shell-control { padding: var(--cx-sp-4); gap: var(--cx-sp-4); }
+}

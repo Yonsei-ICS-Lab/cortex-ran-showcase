@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CORTEX-RAN · ICS Lab</title>
+  <link rel="stylesheet" href="assets/tokens.css">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <script type="module" src="assets/site.js"></script>
+</head>
+<body class="cx-page">
+  <nav class="nav">
+    <div class="nav-ics"><span class="badge">ICS</span><span class="full">ICS Lab · Yonsei</span></div>
+    <a class="nav-brand" href="#top"><span class="nav-mark"><img src="assets/icon.png" width="34" height="34" alt=""></span><b>CORTEX-RAN</b></a>
+    <div class="nav-links"><a href="#platform">Platform</a><a href="#projects">Projects</a><a href="#publications">Publications</a></div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-mark"><img src="assets/icon.png" width="120" height="120" alt=""></div>
+    <div class="hero-text">
+      <div class="cx-eyebrow" id="heroLab">ICS Lab</div>
+      <h1>CORTEX<span>-RAN</span></h1>
+      <p class="full" id="heroFull"></p>
+      <p class="tagline" id="heroTag"></p>
+      <div class="hero-stats" id="heroStats"></div>
+    </div>
+  </header>
+
+  <section class="sec" id="platform">
+    <div class="sec-hd"><div class="cx-eyebrow">Platform</div><h2>What CORTEX stands for</h2></div>
+    <figure class="platform-photo" id="platformPhoto"></figure>
+    <div class="acronym" id="acronym"></div>
+  </section>
+
+  <section class="sec" id="projects">
+    <div class="sec-hd"><div class="cx-eyebrow">Projects</div><h2>Projects</h2></div>
+    <div class="filters">
+      <div class="filter-group" role="group" aria-label="Filter by platform"><span class="filter-k">PLATFORM</span><div class="chips" id="fPlat"></div></div>
+    </div>
+    <div class="cards" id="cards"></div>
+    <p class="empty" id="noMatch" hidden>No project matches these filters.</p>
+  </section>
+
+  <section class="sec" id="publications">
+    <div class="sec-hd"><div class="cx-eyebrow">Publications</div><h2>Publications</h2></div>
+    <div class="cx-card info-card"><ol class="papers" id="papers"></ol></div>
+  </section>
+
+  <footer class="foot"><span id="footLab"></span><span class="cx-muted">Project overview · ICS Lab, Yonsei University</span></footer>
+</body>
+</html>

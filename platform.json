@@ -1,0 +1,67 @@
+{
+  "public": true,
+  "name": "CORTEX-RAN",
+  "full_name": "Cognitive Orchestration, Reasoning & Telemetry-driven EXecution for AI-native RAN",
+  "tagline": "An AI-native RAN control platform, from network intent to radio execution",
+  "lab": "ICS Lab · Yonsei University",
+  "photo": "",
+  "photo_caption": "",
+  "acronym": [
+    {
+      "letter": "C",
+      "word": "Cognition",
+      "meaning": "Understanding what the operator wants: natural-language intents are interpreted and reasoned about with LLMs."
+    },
+    {
+      "letter": "O",
+      "word": "Orchestration",
+      "meaning": "Coordinating RAN resources, services and the control applications that act on them."
+    },
+    {
+      "letter": "R",
+      "word": "Reasoning",
+      "meaning": "Learning-based decision making, e.g. deep reinforcement learning, that turns goals into control actions."
+    },
+    {
+      "letter": "T",
+      "word": "Telemetry",
+      "meaning": "Measuring the RAN — KPM and MAC/RLC/PDCP statistics — so every decision is grounded in live state."
+    },
+    {
+      "letter": "E",
+      "word": "Execution",
+      "meaning": "Carrying decisions out in the RAN: scheduling, slice/PRB control and radio actions inside the gNB."
+    },
+    {
+      "letter": "X",
+      "word": "eXchange",
+      "meaning": "The open interfaces that connect it all: E2, A1, O1 and dApp APIs."
+    }
+  ],
+  "platforms": [
+    {
+      "id": "OAI",
+      "name": "OpenAirInterface",
+      "desc": "5G NR gNB / nrUE (rfsim and USRP), FlexRIC nearRT-RIC, E2SM-KPM / RC"
+    },
+    {
+      "id": "OCUDU",
+      "name": "OCUDU",
+      "desc": "Open CU/DU software stack"
+    },
+    {
+      "id": "ns-3",
+      "name": "ns-3",
+      "desc": "ns-3 network simulator with FlexRIC (O-RAN E2 in simulation)"
+    }
+  ],
+  "papers": [
+    {
+      "title": "LLM-hRIC: LLM-empowered Hierarchical RAN Intelligent Control for O-RAN",
+      "authors": "L. Bao, S. Yun, J. Lee, and T. Q. S. Quek",
+      "venue": "IEEE Communications Magazine, 2026",
+      "url": "https://doi.org/10.1109/MCOM.001.2500315",
+      "arxiv": "https://arxiv.org/abs/2504.18062"
+    }
+  ]
+}
