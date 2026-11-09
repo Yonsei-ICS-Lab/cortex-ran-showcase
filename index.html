@@ -13,7 +13,7 @@
   <nav class="nav">
     <a class="nav-ics lab-link" href="https://sites.google.com/site/jeminleeweb/home" target="_blank" rel="noopener" title="ICS Lab website"><span class="badge">ICS</span><span class="full">ICS Lab · Yonsei</span></a>
     <a class="nav-brand" href="#top"><span class="nav-mark"><img src="assets/icon.png" width="34" height="34" alt=""></span><b>CORTEX-RAN</b></a>
-    <div class="nav-links"><a href="#platform">Platform</a><a href="#projects">Projects</a><a href="#publications">Publications</a></div>
+    <div class="nav-links"><a href="#architecture">Architecture</a><a href="#platform">Platform</a><a href="#projects">Projects</a><a href="#roadmap">Roadmap</a><a href="#publications">Publications</a></div>
   </nav>
 
   <header class="hero" id="top">
@@ -26,6 +26,12 @@
       <div class="hero-stats" id="heroStats"></div>
     </div>
   </header>
+
+  <section class="sec" id="architecture">
+    <div class="sec-hd"><div class="cx-eyebrow">Architecture</div><h2>One platform, every control timescale</h2></div>
+    <p class="sec-lead">From a natural-language intent to radio execution: LLM agents and rApps decide policy, xApps control the RAN in near real time, dApps act inside the gNB. Projects plug into the layers they cover.</p>
+    <figure class="diagram"><img src="img/architecture.svg" alt="CORTEX-RAN reference architecture: intent, Non-RT RIC, Near-RT RIC, real-time and RAN layers with shared telemetry, interfaces, AI engine and platform services"></figure>
+  </section>
 
   <section class="sec" id="platform">
     <div class="sec-hd"><div class="cx-eyebrow">Platform</div><h2>What CORTEX stands for</h2></div>
@@ -40,6 +46,12 @@
     </div>
     <div class="cards" id="cards"></div>
     <p class="empty" id="noMatch" hidden>No project matches these filters.</p>
+  </section>
+
+  <section class="sec" id="roadmap">
+    <div class="sec-hd"><div class="cx-eyebrow">Roadmap</div><h2>Toward an AI-native end-to-end network</h2></div>
+    <p class="sec-lead">Step by step from AI in single control loops to one intelligence across the RIC hierarchy, the RAN stack from PHY up, and the core network.</p>
+    <figure class="diagram"><img src="img/roadmap.svg" alt="CORTEX-RAN roadmap: four phases from single-loop intelligence to an AI-native end-to-end network"></figure>
   </section>
 
   <section class="sec" id="publications">

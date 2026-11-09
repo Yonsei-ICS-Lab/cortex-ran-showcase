@@ -64,5 +64,215 @@
       "url": "https://doi.org/10.1109/MCOM.001.2500315",
       "arxiv": "https://arxiv.org/abs/2504.18062"
     }
+  ],
+  "architecture": {
+    "layers": [
+      {
+        "id": "intent",
+        "title": "Intent & Cognition",
+        "timescale": "operator / SMO",
+        "letters": [
+          "C"
+        ],
+        "interface": "intent API",
+        "capabilities": [
+          "natural-language intents",
+          "LLM reasoning agents",
+          "experience memory"
+        ]
+      },
+      {
+        "id": "nonrt",
+        "title": "Non-RT RIC · rApps",
+        "timescale": "> 1 s",
+        "letters": [
+          "R"
+        ],
+        "interface": "A1",
+        "capabilities": [
+          "intent → policy",
+          "load balancing",
+          "energy & slicing policy",
+          "model lifecycle"
+        ]
+      },
+      {
+        "id": "nearrt",
+        "title": "Near-RT RIC · xApps",
+        "timescale": "10 ms – 1 s",
+        "letters": [
+          "O",
+          "R"
+        ],
+        "interface": "E2",
+        "capabilities": [
+          "slice PRB control",
+          "sleep / energy control",
+          "interference mitigation",
+          "conflict management"
+        ]
+      },
+      {
+        "id": "rt",
+        "title": "Real-time · dApps & in-gNB",
+        "timescale": "< 10 ms",
+        "letters": [
+          "E"
+        ],
+        "interface": "E3 / FAPI",
+        "capabilities": [
+          "MAC scheduling",
+          "spectrum sensing on I/Q",
+          "sleep execution",
+          "RAN–AI accelerator sharing"
+        ]
+      }
+    ],
+    "testbeds": [
+      "OAI 5G SA + FlexRIC",
+      "OCUDU · GPU gNB + O-RU",
+      "ns-3 + FlexRIC"
+    ],
+    "testbeds_next": "+ commercial / OTA",
+    "shared": [
+      {
+        "letter": "T",
+        "title": "Telemetry & data",
+        "lines": [
+          "KPM · MAC / RLC / PDCP · I/Q",
+          "one state store per testbed",
+          "experiment logs → datasets"
+        ]
+      },
+      {
+        "letter": "X",
+        "title": "Open interfaces",
+        "lines": [
+          "A1 · E2 (KPM, RC) · E3 (dApp)",
+          "O1 / intent API",
+          "standard SMs, no vendor lock-in"
+        ]
+      },
+      {
+        "letter": "",
+        "title": "AI engine",
+        "lines": [
+          "LLMs (local GPU / API)",
+          "DRL: TD3 · PPO · Transformer",
+          "shared GPU: baseband + AI inference"
+        ]
+      },
+      {
+        "letter": "",
+        "title": "Platform services",
+        "lines": [
+          "CORTEX portal & unified UI",
+          "E-STOP · safe policies",
+          "reproducible experiments"
+        ]
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "title": "Phase 1 · Single-loop intelligence",
+      "theme": "AI in one control loop at a time",
+      "year": "2026",
+      "status": "done",
+      "items": [
+        [
+          "done",
+          "LLM rApp + DRL xApp for intent-driven slicing"
+        ],
+        [
+          "done",
+          "DRL xApp + MAC executor for slicing and RU sleep"
+        ],
+        [
+          "done",
+          "real-time dApp for interference sensing on I/Q"
+        ],
+        [
+          "done",
+          "LLM rApp for mobility load balancing (simulation)"
+        ],
+        [
+          "done",
+          "RAN and edge AI co-scheduled on a shared accelerator"
+        ]
+      ]
+    },
+    {
+      "title": "Phase 2 · Multi-layer RIC",
+      "theme": "rApps, xApps and dApps as one hierarchy",
+      "year": "2027",
+      "status": "next",
+      "items": [
+        [
+          "plan",
+          "one intent decomposed across rApp → xApp → dApp"
+        ],
+        [
+          "plan",
+          "conflict management between xApps on one gNB"
+        ],
+        [
+          "plan",
+          "shared RAN state and telemetry across layers"
+        ],
+        [
+          "plan",
+          "over-the-air validation of the full hierarchy"
+        ]
+      ]
+    },
+    {
+      "title": "Phase 3 · AI-native RAN stack",
+      "theme": "learning from PHY to RIC",
+      "year": "2028",
+      "status": "plan",
+      "items": [
+        [
+          "plan",
+          "AI PHY: channel estimation, detection, sensing on GPU"
+        ],
+        [
+          "plan",
+          "learned MAC scheduling and link adaptation"
+        ],
+        [
+          "plan",
+          "joint PHY–MAC–RIC loops on every timescale"
+        ],
+        [
+          "plan",
+          "multi-cell coordination and mobility"
+        ]
+      ]
+    },
+    {
+      "title": "Phase 4 · AI-native E2E network",
+      "theme": "RAN and core under one intelligence",
+      "year": "2029 – 2030",
+      "status": "plan",
+      "items": [
+        [
+          "plan",
+          "AI-driven core: session, QoS and UPF policies"
+        ],
+        [
+          "plan",
+          "end-to-end slicing from UE to data network"
+        ],
+        [
+          "plan",
+          "cross-domain intents: RAN + transport + core"
+        ],
+        [
+          "plan",
+          "self-evolving agents with shared experience"
+        ]
+      ]
+    }
   ]
 }

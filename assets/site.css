@@ -112,3 +112,8 @@ a.nav-ics:hover .full { color: var(--cx-brand); }
 
 .foot { max-width: 1720px; margin: 0 auto; padding: var(--cx-sp-6) clamp(16px, 4vw, 64px) var(--cx-sp-10); border-top: 1px solid var(--cx-border);
   display: flex; justify-content: space-between; gap: var(--cx-sp-4); flex-wrap: wrap; font-size: var(--cx-fs-s); color: var(--cx-text-2); }
+
+/* ---- architecture / roadmap diagrams (img/*.svg, drawn by diagrams.py) ---- */
+.sec-lead { max-width: 900px; margin: 0 0 var(--cx-sp-5); color: var(--cx-text-2); font-size: var(--cx-fs-l); line-height: 1.6; }
+.diagram { margin: 0; padding: var(--cx-sp-5); border: 1px solid var(--cx-border); border-radius: var(--cx-radius-l); background: #0a0f1a; overflow-x: auto; }
+.diagram img { display: block; width: 100%; min-width: 900px; height: auto; }
