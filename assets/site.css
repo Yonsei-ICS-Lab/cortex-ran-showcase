@@ -84,6 +84,7 @@ a.nav-ics:hover .full { color: var(--cx-brand); }
 .card-name { flex: 1; min-width: 0; }
 .card-name b { display: block; font-size: var(--cx-fs-l); }
 .card-name .card-proj { display: block; color: var(--cx-brand); font-size: var(--cx-fs-s); font-weight: 600; letter-spacing: 0.04em; margin-bottom: 2px; }
+.card-name .card-authors { display: block; color: var(--cx-text-2); font-size: var(--cx-fs-s); margin-top: 6px; line-height: 1.45; }
 .card-name .card-org { display: block; color: var(--cx-text-3); font-size: var(--cx-fs-s); margin-top: 4px; }
 .card-name small { color: var(--cx-text-3); font-family: var(--cx-font-mono); font-size: var(--cx-fs-xs); }
 .card-sum { margin: 0; color: var(--cx-text-2); font-size: var(--cx-fs-m); flex: 1; }

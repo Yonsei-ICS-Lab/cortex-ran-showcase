@@ -50,7 +50,7 @@ function renderCards() {
   $("cards").innerHTML = shown.map((p) => `<article class="cx-card card">
       <div class="card-hd">
         <div class="card-name">${p.title ? `<span class="card-proj">${esc(p.name)}</span><b>${esc(p.title)}</b>` : `<b>${esc(p.name)}</b>`}
-          ${p.org ? `<span class="card-org">${esc(p.org)}</span>` : ""}</div>
+          ${p.authors ? `<span class="card-authors">${esc(p.authors)}</span>` : ""}${p.org ? `<span class="card-org">${esc(p.org)}</span>` : ""}</div>
       </div>
       <p class="card-sum">${esc(p.summary)}</p>
       <div class="tags"><span class="tag plat">${esc(p.platform)}</span></div>
