@@ -54,6 +54,11 @@
       "id": "ns-3",
       "name": "ns-3",
       "desc": "ns-3 network simulator with FlexRIC (O-RAN E2 in simulation)"
+    },
+    {
+      "id": "Aerial",
+      "name": "NVIDIA Aerial",
+      "desc": "GPU-accelerated L1 (Aerial) with an OAI higher-layer stack on a GB10 host and a physical RU"
     }
   ],
   "papers": [
@@ -130,10 +135,10 @@
     ],
     "testbeds": [
       "OAI 5G SA + FlexRIC",
-      "OCUDU · GPU gNB + O-RU",
-      "ns-3 + FlexRIC"
+      "OCUDU + O-RU",
+      "ns-3 + FlexRIC",
+      "Aerial L1 + OAI (GB10)"
     ],
-    "testbeds_next": "+ commercial / OTA",
     "shared": [
       {
         "letter": "T",
@@ -199,6 +204,10 @@
         [
           "done",
           "RAN and edge AI co-scheduled on a shared accelerator"
+        ],
+        [
+          "done",
+          "cross-layer power profiling and models of a GPU RAN"
         ]
       ]
     },
